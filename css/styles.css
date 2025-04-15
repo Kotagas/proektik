@@ -755,3 +755,192 @@ footer {
         width: 150px; /* Ще менший розмір для мобільних */
     }
 }
+/* Стилі для хедера */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Переносимо flex сюди, щоб краще контролювати вирівнювання */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-block img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-block span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px; /* Зменшуємо розмір тексту для кращої пропорції */
+    font-weight: 600;
+    line-height: 36px;
+}
+
+.desktop-menu {
+    display: flex;
+    justify-content: space-between; /* Змінюємо на space-between для рівномірного розподілу */
+    max-width: 600px; /* Обмежуємо максимальну ширину меню */
+    width: 100%; /* Дозволяємо займати доступний простір */
+}
+
+.desktop-menu li {
+    list-style: none;
+    margin: 0 10px; /* Додаємо відступи між пунктами */
+}
+
+.desktop-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Додаємо внутрішні відступи для більшої "клікабельної" зони */
+    display: block;
+    transition: color 0.3s ease; /* Плавний перехід кольору */
+}
+
+.desktop-menu a:hover {
+    color: #3498db;
+}
+
+.desktop-menu a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.header-burger {
+    display: none;
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-burger_line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header-burger_line:nth-child(1) {
+    top: 0;
+}
+
+.header-burger_line:nth-child(2),
+.header-burger_line:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-burger_line:nth-child(4) {
+    bottom: 0;
+}
+
+.header-burger.active .header-burger_line:nth-child(1),
+.header-burger.active .header-burger_line:nth-child(4) {
+    display: none;
+}
+
+.header-burger.active .header-burger_line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.header-burger.active .header-burger_line:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #34495e;
+    padding: 20px 0;
+}
+
+.mobile-menu li {
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.mobile-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #3498db;
+}
+
+.mobile-menu a.active {
+    color: #3498db;
+}
+
+/* Адаптивність */
+@media screen and (max-width: 720px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .logo-block span {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .header-burger {
+        display: block;
+    }
+}
+
+/* Для великих екранів (ширших за 1200px) */
+@media screen and (min-width: 1200px) {
+    .desktop-menu {
+        max-width: 700px; /* Трохи більше простору для великих екранів */
+    }
+
+    .desktop-menu a {
+        font-size: 18px; /* Збільшуємо розмір тексту */
+        padding: 10px 20px;
+    }
+
+    .logo-block span {
+        font-size: 32px; /* Повертаємо більший розмір для логотипу */
+        line-height: 40px;
+    }
+}
