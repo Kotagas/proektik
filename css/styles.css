@@ -366,3 +366,392 @@ footer {
         line-height: 42px;
     }
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стилі для хедера */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-block img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-block span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.desktop-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.desktop-menu li {
+    list-style: none;
+}
+
+.desktop-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: white;
+    text-decoration: none;
+    padding: 12px 0;
+    display: block;
+    text-align: center;
+}
+
+.desktop-menu a:hover {
+    color: #3498db;
+}
+
+.desktop-menu a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+}
+
+.header-burger {
+    display: none;
+    width: 30px;
+    height: 21px;
+    position: absolute;
+    cursor: pointer;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-burger_line {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.header-burger_line:nth-child(1) {
+    top: 0;
+}
+
+.header-burger_line:nth-child(2),
+.header-burger_line:nth-child(3) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-burger_line:nth-child(4) {
+    bottom: 0;
+}
+
+.header-burger.active .header-burger_line:nth-child(1),
+.header-burger.active .header-burger_line:nth-child(4) {
+    display: none;
+}
+
+.header-burger.active .header-burger_line:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.header-burger.active .header-burger_line:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #34495e;
+    padding: 20px 0;
+}
+
+.mobile-menu li {
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.mobile-menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+}
+
+.mobile-menu a:hover {
+    color: #3498db;
+}
+
+.mobile-menu a.active {
+    color: #3498db;
+}
+
+/* Секція Introduction */
+.introduction {
+    padding: 40px 0;
+}
+
+.introduction-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    align-items: center;
+}
+
+.introduction-textBlock {
+    padding-top: 20px;
+}
+
+.introduction-textBlock h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.introduction-textBlock p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #556070;
+    margin-bottom: 20px;
+}
+
+.introduction-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Секція Social Block */
+.social-block {
+    padding: 40px 0;
+}
+
+.social-wrap {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.social-img-wrap {
+    position: relative;
+    max-width: 424px;
+    width: 100%;
+}
+
+.social-img-wrap img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.social-row {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -36px;
+    width: 260px;
+    height: 72px;
+    justify-content: space-around;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-row li {
+    list-style: none;
+}
+
+.social-row img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
+}
+
+.social-row img:hover {
+    transform: scale(1.1);
+}
+
+.social-textBlock h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 50px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.social-textBlock p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #556070;
+    margin-bottom: 16px;
+}
+
+/* Секція Content */
+.content {
+    padding: 40px 0;
+}
+
+.content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 56px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 24px;
+    color: #556070;
+    margin-bottom: 16px;
+}
+
+.content ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #556070;
+}
+
+.content ul li {
+    margin-bottom: 20px;
+}
+
+/* Стилі для зображень у списку */
+.bike-image {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.bike-image img {
+    width: 200px; /* Менший розмір зображень */
+    height: auto;
+    border-radius: 15px; /* Заокруглення кутів */
+    object-fit: cover;
+}
+
+/* Футер */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Адаптивність */
+@media screen and (max-width: 720px) {
+    header {
+        padding: 15px 0;
+    }
+
+    .logo-block span {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+
+    .header-burger {
+        display: block;
+    }
+
+    .introduction-wrap {
+        grid-template-columns: 1fr;
+        row-gap: 20px;
+    }
+
+    .introduction-textBlock {
+        padding-top: 0;
+    }
+
+    .introduction-textBlock h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .social-wrap {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .social-row {
+        bottom: -20px;
+        width: 200px;
+        height: 60px;
+    }
+
+    .social-row img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .social-textBlock h3 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .content h2 {
+        font-size: 30px;
+        line-height: 42px;
+    }
+
+    .bike-image img {
+        width: 150px; /* Ще менший розмір для мобільних */
+    }
+}
